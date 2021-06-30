@@ -342,6 +342,7 @@ background-color: var(--white);
    background-color: var(--milk-white);
    padding: 1rem;
    margin: 0 auto;
+  max-width: 95%; 
 }
 .menu__slide-container::-webkit-scrollbar{
    width: 0px;

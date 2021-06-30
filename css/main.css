@@ -73,7 +73,7 @@ img{
    background-color: #fff;
    z-index: 100;
    display:flex;
-   justify-content: space-around;
+   /* justify-content: space-around; */
    align-items: center;
 }
 .navigation{

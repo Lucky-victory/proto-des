@@ -62,6 +62,9 @@ img{
    max-width: 1500px;
    margin: 0 auto;
 }
+.logo{
+   color: var(--primary-col)
+}
 .header{
    position: fixed;
    top: 0;
@@ -70,11 +73,12 @@ img{
    background-color: #fff;
    z-index: 100;
    display:flex;
-   justify-content: space-between;
+   justify-content: space-around;
    align-items: center;
 }
 .navigation{
 background-color: inherit;
+
 }
 .navigation__list{
    display: flex;
@@ -334,7 +338,9 @@ background-color: var(--white);
    width: 100%;
    border-radius: inherit;
 }
-
+.meal--slide-section{
+   width: 100%;
+}
 .menu__slide-container{
    display: flex;
    flex-wrap: nowrap;
@@ -342,7 +348,8 @@ background-color: var(--white);
    background-color: var(--milk-white);
    padding: 1rem;
    margin: 0 auto;
-  max-width: 95%; 
+  max-width: 90%; 
+  
 }
 .menu__slide-container::-webkit-scrollbar{
    width: 0px;

@@ -63,7 +63,8 @@ img{
    margin: 0 auto;
 }
 .logo{
-   color: var(--primary-col)
+   color: var(--primary-col);
+   font-size: 1.3rem;
 }
 .header{
    position: fixed;
@@ -73,7 +74,7 @@ img{
    background-color: #fff;
    z-index: 100;
    display:flex;
-   /* justify-content: space-around; */
+   justify-content: space-between;
    align-items: center;
 }
 .navigation{

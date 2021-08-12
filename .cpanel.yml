@@ -4,5 +4,5 @@ deployment:
     - export DEPLOYPATH=/home/luckbepo/test.lucky-victory.dev
     - /bin/cp index.html $DEPLOYPATH
     - /bin/cp proto-main.css $DEPLOYPATH
-    - /bin/cp -R proto-css $DEPLOYPATH
-    - /bin/cp -R proto-images $DEPLOYPATH 
+    - /bin/cp -R * proto-css $DEPLOYPATH
+    - /bin/cp -R * proto-images $DEPLOYPATH 

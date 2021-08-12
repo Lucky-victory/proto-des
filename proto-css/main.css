@@ -157,7 +157,7 @@ display: block;
 position: absolute;
 width: 30rem;
 height: 40rem;
-/* background:#000c url('../images/pumpkin-soup-819x1024.jpg') no-repeat center/cover; */
+/* background:#000c url('../proto-images/pumpkin-soup-819x1024.jpg') no-repeat center/cover; */
 background: var(--primary-col);
 background-blend-mode: soft-light;
 top: 0;
@@ -201,7 +201,7 @@ border-radius: 0 50rem 50rem 0;
    border-radius: 50%;
    top: 0;
    right: -1rem;
-   background: url('../images/fish-1024x683.jpg') no-repeat center/cover;
+   background: url('../proto-images/fish-1024x683.jpg') no-repeat center/cover;
 box-shadow: 0 0 0 10px #fff
 }
 .header__banner-image-box::after{
@@ -212,15 +212,15 @@ box-shadow: 0 0 0 10px #fff
    border-radius: 50%;
    bottom: 0;
    right: -1rem;
-   background: url('../images/pumpkin-soup-819x1024.jpg') no-repeat center/cover;
+   background: url('../proto-images/pumpkin-soup-819x1024.jpg') no-repeat center/cover;
 box-shadow: 0 0 0 10px #fff
 }
 .event__header-banner .header__banner-image-box::after{
-background: url('../images/beach-185076_1280.jpg') no-repeat center/cover;
+background: url('../proto-images/beach-185076_1280.jpg') no-repeat center/cover;
 
 }
 .event__header-banner .header__banner-image-box::before{
-background: url('../images/miguel-angel-hernandez.jpg') no-repeat center/cover;
+background: url('../proto-images/miguel-angel-hernandez.jpg') no-repeat center/cover;
 
 }
 .header__banner-image{

@@ -3,5 +3,6 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/luckbepo/public_html/proto-design
     - /bin/cp index.html $DEPLOYPATH
-    - /bin/cp -R css $DEPLOYPATH
-    - /bin/cp -R images $DEPLOYPATH
+    - /bin/cp proto-main.css $DEPLOYPATH
+    - /bin/cp -R proto-css $DEPLOYPATH
+    - /bin/cp -R proto-images $DEPLOYPATH 

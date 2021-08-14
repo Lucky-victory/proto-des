@@ -6,10 +6,12 @@
    width: 0px;
 }
 html{
+  /* --primary-col:#04009a; */
    --primary-col:#09A76B;
    --white:#fff;
    --milk-white:#f7f7f7;
    --faded-black:#0003;
+   --secondary-col:#AD175C;
 }
 body{
    margin: 0;
@@ -22,6 +24,9 @@ body{
 }
 .col--2{
    grid-template-columns: repeat(auto-fit,minmax(23rem,1fr));
+}
+.text--center{
+  text-align: center;
 }
 a{
    color: inherit;
@@ -71,7 +76,7 @@ img{
    top: 0;
    left: 0;
    width: 100%;
-   padding:1rem 1.5rem;
+   padding:1rem;
    background-color: #fff;
    z-index: 100;
    display:flex;
@@ -111,6 +116,11 @@ text-align: center;
    font-family: Arial, Helvetica, sans-serif;
    background-color: var(--white);
 }
+.section--footer{
+  text-align: center;
+  width: 100%;
+  margin: 1rem auto;
+}
 .section__header{
    display: flex;
    align-items: center;
@@ -119,6 +129,7 @@ text-align: center;
    padding: 1rem 1.5rem ;
    text-transform: capitalize;
    color: var(--white);
+   z-index: 2;
 }
 .header__banner-container{
    /* height: 100vh; */
@@ -289,7 +300,7 @@ background: url('../proto-images/miguel-angel-hernandez.jpg') no-repeat center/c
    overflow: hidden;
 }
 .event__section{
-      --primary-col: #AD175C; 
+      --primary-col: var(--secondary-col); 
 
 }
 .food__section-content,.event__section-content{
@@ -342,33 +353,45 @@ background-color: var(--white);
 }
 .meal--slide-section{
    width: 100%;
+   background-color: var(--white);
+   
+   overflow: hidden;
 }
 .menu__slide-container{
-   display: flex;
-   flex-wrap: nowrap;
+   display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(10rem,1fr));
+  grid-gap: 0.5rem;
    overflow-x:auto;
-   background-color: var(--milk-white);
    padding: 1rem;
    margin: 0 auto;
   max-width: 90%; 
+  transform: skew(-7deg);
+  transition: 0.4s ease-in
   
+}
+.menu__slide-container:hover{
+  transform: skew(0deg);
+    transition: 0.4s ease-in;
+
 }
 .menu__slide-container::-webkit-scrollbar{
    width: 0px;
 }
 .menu__slide{
-   width: 19rem;
+   /* width: 19rem; */
    border-radius: 0.875rem;
-   background-color: var(--white);
+   /* background-color: var(--white); */
    flex-shrink: 0;
-   margin:0 0.625rem;
+   /* margin:0 0.625rem; */
    list-style: none;
-   box-shadow: 0 10px 14px var(--faded-black);
-   padding: 0.5rem;
+   /* box-shadow: 0 10px 14px var(--faded-black); */
+   /* padding: 0.5rem; */
+   position: relative;
+   overflow: hidden;
 }
 .menu__slide-image-box{
    width: 100%;
-   height: 14rem;
+   height: 100%;
    border-radius: inherit;
 }
 .menu__slide-image{
@@ -376,17 +399,27 @@ background-color: var(--white);
    height: 100%;
    object-fit: cover;
       border-radius: inherit;
-   border: 5px solid var(--primary-col);
+   /* border: 5px solid var(--primary-col); */
 
 }
 .menu__slide-title{
-   margin: 0.875rem 0 0.625rem;
    font-size: 1.25rem;
    font-weight: 400;
    display: block;
    text-transform: capitalize;
 padding-left: 0.5rem;
 font-weight: 600;
+position: absolute;
+width: 100%;
+height: 100%;
+top:0;
+left: 0;
+color: var(--white);
+background-color: #0005;
+text-align: center;
+display: flex;
+justify-content: center;
+align-items: center;
 }
 /* .menu__slide-price{
    font-weight: 600;
@@ -430,6 +463,160 @@ font-weight: 600;
 } */
 
 
+.workers-section{
+  text-align: center;
+  --worker-bg:#fff;
+  --worker-info-bg:var(--primary-col)
+  /* --worker-info-bg:#515BC0; */
+}
+.planners-section{
+  --worker-info-bg:var(--secondary-col)
+}
+.workers-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 2rem;
+  
+}
+.workers-section__title{
+  display: inline-block;
+  padding: 1.5rem;
+  position: relative;
+  z-index: 1;
+  color: var(--white)
+}
+.workers-section__title::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--worker-info-bg);
+  z-index: -1;
+  transform: skew(15deg);
+  top: 0;
+  left: 0;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+.worker{
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--worker-bg);
+  border-radius: 0 2rem 2rem 2rem ;
+  box-shadow: 0 12px 20px #0003;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+.worker__image-container{
+  width: 100%;
+  max-width: 350px;
+  height: 21.875rem;
+  border-radius: 50%;
+  background-color: #fcfcfc;
+  margin: 1rem auto;
+  z-index: 2;
+  box-shadow: 0 0 0 8px var(--worker-bg);
+  border: 5px solid #A0A4D4;
+}
+.worker__image{
+ width: 100%;
+ height: 100%;
+ max-height: 100%;
+ object-fit: cover;
+ object-position: center top ;
+ border-radius: inherit;
+}
+.worker__info{
+  background-color:var(--worker-info-bg);
+  padding: 2rem 1rem;
+  border-radius: 0.875rem;
+  margin-top: -2rem;
+  z-index: 1;
+  box-shadow: 0 8px 14px #0003;
+  text-align: center;
+  color: #fff
+}
+.worker__info-name{
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+  /* workers section styles end */
+
+  /* feedbacks styles start */
+.feedbacks-section{
+  --feedback-bg:#0F886F;
+  text-align: center;
+}
+.feedbacks-section__title {
+  display: inline-block;
+  padding: 1.5rem;
+  position: relative;
+  z-index: 1;
+  color: var(--white)
+}
+
+.feedbacks-section__title::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--feedback-bg);
+  z-index: -1;
+  transform: skew(15deg);
+  top: 0;
+  left: 0;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+.feedbacks-container{
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.feedback{
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  padding: 1rem;
+  background-color: var(--feedback-bg);
+  overflow: hidden;
+  border-radius: 0.375rem;
+  box-shadow: 0 10px 14px var(--faded-black);
+  margin-bottom: 1.5rem;
+  
+  
+}
+.feedback__image-container{
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  position:absolute;
+  top: 0.5rem;
+  right:0.5rem;
+  box-shadow: 0 0 0 8px var(--feedback-bg)
+}
+.feedback__image{
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+object-position: center top;
+}
+.feedback__content{
+  border: 2px dashed var(--milk-white);
+  border-radius: 1rem;
+  padding: 1rem;
+  padding-right: 4rem;
+  text-align: left;
+  color: var(--white)
+}
+  /* breakpoints */
 @media all and (max-width: 500px){
    html{
       font-size: 14px;

@@ -42,7 +42,7 @@ img{
 .btn--link{
    padding:0.875rem 1.5rem;
    text-align: center;
-   background-color: var(--primary-col)!important;
+   background-color: var(--secondary-col)!important;
    color: #fff!important;
    text-transform: capitalize;
    font-size: 1.2rem;
@@ -66,6 +66,7 @@ img{
    background-color: var(--milk-white);
    max-width: 1500px;
    margin: 0 auto;
+
 }
 .logo{
    color: var(--primary-col);
@@ -365,15 +366,10 @@ background-color: var(--white);
    padding: 1rem;
    margin: 0 auto;
   max-width: 90%; 
-  transform: skew(-7deg);
   transition: 0.4s ease-in
   
 }
-.menu__slide-container:hover{
-  transform: skew(0deg);
-    transition: 0.4s ease-in;
 
-}
 .menu__slide-container::-webkit-scrollbar{
    width: 0px;
 }
@@ -400,7 +396,12 @@ background-color: var(--white);
    object-fit: cover;
       border-radius: inherit;
    /* border: 5px solid var(--primary-col); */
+  transition: 0.5s ease-in-out;
 
+}
+.menu__slide:hover .menu__slide-image{
+  transform: scale(1.1);
+  transition: 0.5s ease-in-out;
 }
 .menu__slide-title{
    font-size: 1.25rem;
@@ -517,7 +518,7 @@ align-items: center;
   height: 21.875rem;
   border-radius: 50%;
   background-color: #fcfcfc;
-  margin: 1rem auto;
+  margin: 1rem auto 0 ;
   z-index: 2;
   box-shadow: 0 0 0 8px var(--worker-bg);
   border: 5px solid #A0A4D4;
@@ -532,11 +533,11 @@ align-items: center;
 }
 .worker__info{
   background-color:var(--worker-info-bg);
-  padding: 2rem 1rem;
-  border-radius: 0.875rem;
-  margin-top: -2rem;
+  padding: 2.5rem 1rem 1rem;
+  border-radius:2rem;
+  margin-top: -1rem;
   z-index: 1;
-  box-shadow: 0 8px 14px #0003;
+  /* box-shadow: 0 8px 14px #0003; */
   text-align: center;
   color: #fff
 }
@@ -550,6 +551,7 @@ align-items: center;
   /* feedbacks styles start */
 .feedbacks-section{
   --feedback-bg:#0F886F;
+  --feedback-img-w:5rem;
   text-align: center;
 }
 .feedbacks-section__title {
@@ -591,6 +593,13 @@ align-items: center;
   margin-bottom: 1.5rem;
   
   
+}
+.feedback:nth-of-type(odd) .feedback__image-container{
+left: 0.5rem;
+}
+.feedback:nth-of-type(odd) .feedback__content{
+  padding: 1rem;
+  padding-left: var(--feedback-img-w);
 }
 .feedback__image-container{
   width: 5rem;

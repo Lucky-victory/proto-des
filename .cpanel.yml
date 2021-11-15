@@ -5,3 +5,4 @@ deployment:
     - /bin/cp index.html $DEPLOYPATH
     - /bin/cp -R * proto-css $DEPLOYPATH
     - /bin/cp -R * proto-images $DEPLOYPATH 
+    - /bin/cp -R * proto-js $DEPLOYPATH 

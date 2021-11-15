@@ -1,5 +1,7 @@
 *,*::before,::after{
    box-sizing: border-box;
+   margin: 0;
+   padding: 0;
    
 }
 *::-webkit-scrollbar{
@@ -12,6 +14,7 @@ html{
    --milk-white:#f7f7f7;
    --faded-black:#0003;
    --secondary-col:#AD175C;
+   font-size: 16px;
 }
 body{
    margin: 0;
@@ -133,12 +136,14 @@ text-align: center;
    z-index: 2;
 }
 .header__banner-container{
-   /* height: 100vh; */
+  min-height: 40em;
    max-height: 1300px;
    display: flex;
    width: 100%;
-   overflow-x:auto;
+   max-width: 100%;
+   overflow:hidden;
    margin-bottom: 2rem;
+   position: relative;
 }
 .header--flex{
    min-height: 100%;
@@ -147,8 +152,22 @@ text-align: center;
    display: flex;
    flex-direction: column;
    background-color: var(--white);
-   padding: 5rem 0 1rem;
+   padding: 3rem 0 2rem;
    flex-shrink: 0;
+}
+.banner{
+  /* transform: translateX(-100%); */
+  z-index: 0;
+  opacity: 0;
+  position: absolute;
+  transition:opacity 0.4s ease-in-out
+}
+.banner.active--banner{
+  /* transform: translateX(0); */
+  z-index: 2;
+  opacity: 1;
+    transition:opacity 0.4s ease-in-out;
+position: relative;
 }
 .header__banner{
    flex-shrink: 0;
@@ -156,7 +175,7 @@ text-align: center;
    width: 100%;
    /* justify-content: center; */
    align-items: center;
-   padding: 3rem 0;
+   padding:1rem 0 1rem ;
    grid-template-columns: repeat(auto-fit,minmax(23rem,1fr));
    position: relative;
    z-index: 0;
@@ -178,22 +197,22 @@ border-radius: 0 50rem 50rem 0;
 }
 
 .header__banner-content{
-   padding:0.5rem 2rem;
+   padding:0.5rem 1.5rem;
    z-index: 2;
    background-color: #fff;
    max-width: 100%;
    
 }
 .header__banner-content-title{
-   font-size:2.875rem;
+   font-size:2.75rem;
    text-transform: uppercase;
    color: var(--primary-col);
-   margin-bottom: 1.5rem;
+   margin-bottom: 1.2rem;
 }
 
 .header__banner-image-box{
-   width: 25rem;
-   height: 25rem;
+   width: 24rem;
+   height: 24rem;
    max-width: 100%;
    border-radius: 50%;
    box-shadow:inset -20px -20px 20px #0004,inset 20px 20px 30px var(--primary-col);
@@ -310,7 +329,7 @@ background: url('../proto-images/miguel-angel-hernandez.jpg') no-repeat center/c
 .food__section-content-title,.event__section-content-title{
    color: var(--primary-col);
 text-transform: uppercase;
-margin-bottom: 1rem;
+margin: 1.2rem 0;
 font-size: 1.875rem;
 }
 .food__section-image-box,.event__section-image-box{
@@ -485,7 +504,8 @@ align-items: center;
   padding: 1.5rem;
   position: relative;
   z-index: 1;
-  color: var(--white)
+  color: var(--white);
+  margin-top: 1rem;
 }
 .workers-section__title::before{
   content: "";
@@ -557,6 +577,7 @@ align-items: center;
 .feedbacks-section__title {
   display: inline-block;
   padding: 1.5rem;
+  margin:1rem 0;
   position: relative;
   z-index: 1;
   color: var(--white)
@@ -623,7 +644,12 @@ object-position: center top;
   padding: 1rem;
   padding-right: var(--feedback-img-w);
   text-align: left;
-  color: var(--white)
+  color: var(--white);
+}
+.feedback__name{
+  text-transform: capitalize;
+  margin-top: 1em;
+  display: inline-block;
 }
   /* breakpoints */
 @media all and (max-width: 500px){
@@ -659,7 +685,7 @@ object-position: center top;
    background-color: #000;
    top: 0;
    right: 0;
-   padding-top: 3rem;
+   padding: 3rem 1rem 0;
    overflow-y: auto;
    display: none;
 }
